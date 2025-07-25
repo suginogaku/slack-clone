@@ -6,7 +6,7 @@ export const authRepository = {
   async signup(name: string, email: string, password: string): Promise<{user: User, token: string}> {
     const result = await fetch(`${VITE_API_URL}/auth/signup`,
     {
-      method: "GET",
+      method: "POST",
       headers: { "Content-Type": "application/json"},
       body: JSON.stringify({ name, email, password })
     }
